@@ -17,6 +17,10 @@
     "css"
   ],
   "author": "Liu Yuyang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HalfdogStudio/css-for-fun"
+  },
   "license": "MIT",
-  "github": "https://github.com/HalfdogStudio/css-for-fun"
+  "homepage": "https://github.com/HalfdogStudio/css-for-fun"
 }
