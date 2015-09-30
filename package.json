@@ -1,0 +1,22 @@
+{
+  "name": "css-for-fun",
+  "version": "1.0.0",
+  "description": "play css for fun and profit?",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "mathsass": "^0.9.5",
+    "gulp-sass": "^2.0.4",
+    "gulp-watch": "^4.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Liu Yuyang",
+  "license": "MIT",
+  "github": "https://github.com/HalfdogStudio/css-for-fun"
+}

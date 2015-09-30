@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: grey; }
+
+.taiji {
+  flex: 0 0 auto;
+  width: 0;
+  height: 50vmin;
+  border-style: solid;
+  border-width: 0 25vmin 0 25vmin;
+  border-color: white black white white;
+  border-radius: 100%;
+  position: relative; }
+
+.taiji:before {
+  content: "";
+  position: absolute;
+  top: 10vmin;
+  left: -2.5vmin;
+  display: block;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 100%;
+  background: black;
+  box-shadow: 0 0 0 10vmin white; }
+
+.taiji:after {
+  content: "";
+  position: absolute;
+  bottom: 10vmin;
+  left: -2.5vmin;
+  display: block;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 100%;
+  background: white;
+  box-shadow: 0 0 0 10vmin black; }
+
+.taiji:hover {
+  transition: 1s all;
+  transform: rotate(360deg); }

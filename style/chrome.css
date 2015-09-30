@@ -1,0 +1,67 @@
+/*
+ * top: #4071a0;
+ * left: #89b7e1;
+ * right: #d0e2f1;
+*/
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: grey;
+  overflow: hidden; }
+
+.chrome-logo {
+  display: block;
+  width: 50vmin;
+  height: 50vmin;
+  margin: 4.44444vmin auto 0;
+  border-radius: 25vmin 25vmin;
+  flex: 0 0 auto;
+  position: relative;
+  /* Orz...... the more ahead the higher in bg-img stack, the first(last item here) is important*/
+  background-image: linear-gradient(240deg, transparent 66.4%, #89b7e1 33%, #20517e), linear-gradient(0deg, transparent 72%, #4071a0 33%, #a0bdd9), linear-gradient(290deg, transparent 60%, #4071a0 33%, #4071a0), linear-gradient(120deg, transparent 66.45%, #d0e2f1 33%, #5a99ce), linear-gradient(57deg, transparent 58%, #d0e2f1 33%, #d0e2f1), linear-gradient(190deg, transparent 58%, #89b7e1 33%, #89b7e1), linear-gradient(60deg, transparent 54%, #4071a0 33%, #4071a0);
+  border-radius: 44.44444vmin;
+  box-shadow: 0px 0px 160px rgba(0, 0, 0, 0.05) inset, 0px 0px 100px rgba(0, 0, 0, 0.05), 0px 0px 10px white;
+  transition: transform 1s ease-in-out;
+  overflow: hidden;
+  animation: 5s rotate linear infinite alternate; }
+
+.chrome-logo:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 47vmin;
+  left: 24.22222vmin;
+  width: 2.77778vmin;
+  height: 4.22222vmin;
+  background: #d0e2f1;
+  background-image: linear-gradient(115deg, #d0e2f1 33%, #a9cae5);
+  border-bottom-right-radius: 22.22222vmin;
+  transform: rotate(30deg); }
+
+.chrome-logo:after {
+  content: '';
+  display: block;
+  width: 18.88889vmin;
+  height: 18.88889vmin;
+  position: absolute;
+  top: 0;
+  left: 15.66667vmin;
+  margin: 15.66667vmin auto 0;
+  background: radial-gradient(circle farthest-side at 50% -10%, #89b7e1 10%, #4071a0 110%);
+  border-radius: 22.22222vmin;
+  box-shadow: 0px 0px 0px 1.66667vmin white; }
+
+.chrome-logo:hover {
+  animation-play-state: paused; }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    left: -78vmin; }
+  to {
+    transform: rotate(360deg);
+    left: 78vmin; } }

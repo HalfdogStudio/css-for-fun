@@ -1,0 +1,53 @@
+$size: 50vmin;
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: grey;
+}
+
+.taiji {
+  flex: 0 0 auto;
+  width: 0;
+  height: $size;
+  border-style: solid;
+  border-width: 0 $size/2 0 $size/2;
+  border-color: white black white white;
+  border-radius: 100%;
+  position: relative;
+}
+
+.taiji:before {
+  content: "";
+  position: absolute;
+  top: $size/4 - $size/20;
+  left: $size/-20;
+  display: block;
+  width: $size/10;
+  height: $size/10;
+  border-radius: 100%;
+  background: black;
+  box-shadow: 0 0 0 $size/4-$size/20 white;
+}
+
+.taiji:after {
+  content: "";
+  position: absolute;
+  bottom: $size/4 - $size/20;
+  left: $size/-20;
+  display: block;
+  width: $size/10;
+  height: $size/10;
+  border-radius: 100%;
+  background: white;
+  box-shadow: 0 0 0 $size/4-$size/20 black;
+}
+
+.taiji:hover {
+  transition: 1s all;
+  transform: rotate(360deg);
+}

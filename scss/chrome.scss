@@ -1,0 +1,97 @@
+$width: 50vmin;
+$height: $width;
+
+/*
+ * top: #4071a0;
+ * left: #89b7e1;
+ * right: #d0e2f1;
+*/
+$darkblue: #4071a0;
+$blue: #89b7e1;
+$lightblue: #d0e2f1;
+
+$left-top:linear-gradient(240deg,  transparent 66.4%, $blue 33%, darken($blue, 40%));
+$top: linear-gradient(0deg, transparent 72%, $darkblue 33%, lighten($darkblue, 30%));
+$top-left: linear-gradient(290deg, transparent 60%, $darkblue 33%, $darkblue);
+$right-bottom: linear-gradient(120deg, transparent 66.45%, $lightblue 33%, darken($lightblue, 30%));
+$right-top: linear-gradient(57deg, transparent 58%, $lightblue 33%, $lightblue);
+$left-bottom: linear-gradient(190deg,  transparent 58%, $blue 33%, $blue);
+$top-fix: linear-gradient(60deg,  transparent 54%, $darkblue 33%, $darkblue);
+$right-fix: linear-gradient(115deg, $lightblue 33%, darken($lightblue, 10%));
+$center: radial-gradient(circle farthest-side at 50% -10%, $blue 10%, $darkblue 110%);
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: grey;
+  overflow: hidden;
+}
+
+.chrome-logo{
+  display: block;
+  width: $width;
+  height: $height;
+  margin: $width*40/450 auto 0;
+  border-radius: $width/2 $height/2;
+  flex: 0 0 auto;
+  position:relative;
+  /* Orz...... the more ahead the higher in bg-img stack, the first(last item here) is important*/
+	background-image: 
+  $left-top,
+  $top,
+  $top-left,
+  $right-bottom,
+  $right-top,
+  $left-bottom,
+  $top-fix;
+  border-radius: 400/450*$width;
+  box-shadow: 0px 0px 160px rgba(0,0,0,0.05) inset, 0px 0px 100px rgba(0,0,0,0.05), 0px 0px 10px rgba(255,255,255, 1.0);
+  transition: transform 1s ease-in-out;
+  overflow: hidden;
+  animation: 5s rotate linear infinite alternate;
+}
+.chrome-logo:before{
+  content:'';
+  display: block;
+  position: absolute;
+  top: $height*423/450;
+  left: $width*218/450;
+  width: $width*25/450;
+  height: $height*38/450;
+  background: $lightblue;
+  background-image: $right-fix; 
+  border-bottom-right-radius: 200/450*$width;
+  transform: rotate(30deg);
+}
+
+.chrome-logo:after{
+  content: '';
+  display: block;
+  width: $width*170/450;
+  height: $height*170/450;
+  position: absolute;
+  top: 0;
+  left: $width*141/450;
+  margin: $height*141/450 auto 0;
+  background: $center;
+  border-radius: $height*200/450;
+  box-shadow: 0px 0px 0px $height*15/450 rgba(255,255,255,1.0);
+}
+
+.chrome-logo:hover {
+  animation-play-state: paused;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    left: -78vmin;
+  }
+  to {
+    transform: rotate(360deg);
+    left: 78vmin;
+  }
+}

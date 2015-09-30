@@ -1,0 +1,110 @@
+@import "node_modules/mathsass/dist/math";
+
+$amount: 9;
+$width: 160px;
+$height: 80px;
+$padding-top: 10px;
+$padding-left: 10px;
+$border-width: 2px;
+
+$face-angle: 360deg/$amount;
+$transform-from-origin: $width / 2 / tan($face-angle / 2);
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: gray;
+  overflow: hidden;
+}
+
+
+.container {
+  flex: 0 0 auto;
+  width: $width;
+  height: $height;
+  position: relative;
+  perspective: 1000px;
+  perspective-origin: 0 0;
+  margin-top: -10vh;
+  transform-style: preserve-3d;
+  transform: rotateZ(35deg);
+}
+
+@keyframes rotate {
+  @for $i from 0 through $amount {
+    #{100 / $amount * $i}% {
+      transform: rotateY(360deg/$amount*$i);
+    }
+  }
+}
+
+@keyframes blink {
+  from {
+    text-shadow: 0 0 1px gold;
+  }
+  to {
+    text-shadow: 0 0 30px yellow;
+  }
+}
+
+h1 {
+  color: gold;
+  font-family: Heiti, sans-serif;
+  animation: 1s blink infinite alternate;
+  text-align: center;
+}
+
+#carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: 10s rotate reverse infinite running;
+  &:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+  } 
+}
+
+#carousel a, #carousel a:visited {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+
+#carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  left: $padding-left;
+  top: $padding-top;
+  width: $width - $padding-left * 2 - $border-width;
+  height: $height - $padding-top * 2 - $border-width;
+  border: $border-width solid gold;
+  box-shadow: 0 0 10px 0 inset lightyellow, 0 0 10px yellow;
+  font-size: min($height, $width) / 2;
+  line-height: $height - $padding-top * 2 - $border-width;
+  text-align: center;
+  background: darken(gold, 40%);
+  color: gold;
+  text-shadow: 0 0 10px tomato;
+  opacity: 0.8;
+}
+
+@mixin transform-face($n){
+  transform: rotateY($face-angle * $n) translateZ($transform-from-origin);
+}
+
+@for $n from 1 through $amount {
+  #carousel figure:nth-child(#{$n}) {
+    @include transform-face($n);
+  }
+}

@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: grey;
+  overflow: hidden; }
+
+.firefox {
+  display: block;
+  width: 90vmin;
+  height: 90vmin;
+  border-radius: 45vmin 45vmin;
+  flex: 0 0 auto;
+  position: relative;
+  border: 2vmin solid silver;
+  overflow: hidden;
+  background: #ED7C30;
+  position: relative; }
+
+.firefox:before {
+  content: "";
+  width: 22.5vmin;
+  height: 22.5vmin;
+  background: #A4DFEF;
+  border-radius: 100%;
+  position: absolute;
+  top: 40.5vmin;
+  left: 22.5vmin;
+  margin: auto;
+  box-shadow: -4.5vmin 0 0 2.25vmin rgba(164, 223, 239, 0.2), 7.2vmin -27vmin 0 3.6vmin rgba(164, 223, 239, 0.2), -13.5vmin -22.5vmin 0 3.6vmin #ED7C30, 11.25vmin -17.1vmin 0 0vmin #A4DFEF, -13.5vmin -13.5vmin 0 5.4vmin #ED7C30, 6.75vmin -27vmin 0 3.6vmin #A4DFEF, 14.85vmin 13.95vmin 0 -6.75vmin #A4DFEF, 13.5vmin 7.65vmin 0 -5.85vmin #ED7C30, 9vmin -4.5vmin 0 0 #A4DFEF, -3.6vmin 0 0 8.55vmin #ED7C30, 9vmin -2.7vmin 0 12.6vmin #A4DFEF, 20.25vmin 4.5vmin 0 15.75vmin #ED7C30, -2.25vmin -25.65vmin 0 3.6vmin #ED7C30, 9vmin -10.35vmin 0 20.25vmin #A4DFEF, -2.25vmin -36vmin 0 3.6vmin #A4DFEF, -13.5vmin -31.5vmin 0 3.6vmin #ED7C30, -2.25vmin -25.65vmin 0 3.6vmin #ED7C30, 19.35vmin -4.95vmin 0 24.75vmin #ED7C30, 9.9vmin -17.55vmin 0 24.75vmin #A4DFEF; }
+
+.firefox:after {
+  content: "";
+  width: 0;
+  height: 0.9vmin;
+  position: absolute;
+  top: 22.5vmin;
+  left: 32.85vmin;
+  border-style: solid;
+  border-width: 5.4vmin 0 6.75vmin 13.5vmin;
+  border-color: #A4DFEF #A4DFEF #A4DFEF transparent;
+  /*
+   * content: if width is 0 there will be no background-image show in the border, Strange!!
+   */
+  background: linear-gradient(90deg, #de9056 75%, #333333 30%);
+  background-size: 15.75vmin 15.75vmin; }
+
+.firefox:hover {
+  transition: all 1s ease;
+  transform: rotate(360deg); }

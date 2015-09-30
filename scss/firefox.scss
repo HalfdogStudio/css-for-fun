@@ -1,0 +1,92 @@
+$width: 90vmin;
+$height: $width;
+
+$firefox-body-color: #ED7C30;
+$background: #A4DFEF;
+$border-color: silver;
+$firefox-body-shadow: rgba(red($background), green($background), blue($background), 0.2);
+$firefox-mouth-color-a: mix($firefox-body-color, $background, 80%);
+$firefox-mouth-color: rgb(red($firefox-mouth-color-a), green($firefox-mouth-color-a), blue($firefox-mouth-color-a));
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: grey;
+  overflow: hidden;
+}
+
+
+.firefox {
+  display: block;
+  width: $width;
+  height: $height;
+  border-radius: $width/2 $height/2;
+  flex: 0 0 auto;
+  position:relative;
+  border: $width*10/450 solid $border-color; 
+  overflow: hidden; 
+  background: $firefox-body-color;
+  position:relative; 
+}
+
+.firefox:before{
+  content: ""; 
+  width: $height*50/200;
+  height: $height*50/200;
+  background: $background;
+  border-radius: 100%;
+  position: absolute;
+  top: $width*90/200;
+  left: $width*50/200;
+  margin:auto;
+  box-shadow:
+  /* warning: IN SCSS, Never put minus after a space!!!*/
+  /* the magic part:)
+  */
+  -$height*10/200 0 0 $height*5/200 $firefox-body-shadow,
+  $height*16/200 60*$height/-200 0 $height*8/200 $firefox-body-shadow,
+  30/-200*$height 50/-200*$height 0 8/200*$height $firefox-body-color,
+  25/200*$height 38/-200*$height 0 0/200*$height $background,
+  30/-200*$height 30/-200*$height 0 12/200*$height $firefox-body-color,
+  15/200*$height 60/-200*$height 0 8/200*$height $background, 
+  33/200*$height 31/200*$height 0 15/-200*$height $background,
+  30/200*$height 17/200*$height 0 13/-200*$height $firefox-body-color,
+  20/200*$height 10/-200*$height 0 0 $background,
+  8/-200*$height 0 0 19/200*$height $firefox-body-color, 
+  20/200*$height 6/-200*$height 0 28/200*$height $background,
+  45/200*$height 10/200*$height 0 35/200*$height $firefox-body-color, /**/
+  5/-200*$height 57/-200*$height 0 8/200*$height $firefox-body-color,
+  20/200*$height 23/-200*$height 0 45/200*$height $background,
+  5/-200*$height 80/-200*$height 0 8/200*$height $background,
+  30/-200*$height 70/-200*$height 0 8/200*$height $firefox-body-color,
+  5/-200*$height 57/-200*$height 0 8/200*$height $firefox-body-color,
+  43/200*$height 11/-200*$height 0 55/200*$height $firefox-body-color,
+  22/200*$height 39/-200*$height 0 55/200*$height $background;
+} 
+
+.firefox:after{
+  content: "";
+  width: 0;
+  height: 2/200*$height;
+  position:absolute;
+  top:50/200*$height;
+  left:73/200*$height;
+  border-style:solid; 
+  border-width:12/200*$height 0 15/200*$height 30/200*$height;
+  border-color: $background $background $background transparent;
+  /*
+   * content: if width is 0 there will be no background-image show in the border, Strange!!
+   */
+  background: linear-gradient(90deg, $firefox-mouth-color 75% ,lighten(black, 20%) 30% );
+  background-size:35/200*$height 35/200*$height ;
+}
+
+
+.firefox:hover{
+  transition: all 1s ease;
+  transform: rotate(360deg);
+}
